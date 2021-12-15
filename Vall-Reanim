@@ -1,0 +1,461 @@
+local IntroGui = Instance.new("ScreenGui")
+local Simulation = Instance.new("TextLabel")
+local Block = Instance.new("Frame")
+local Games = Instance.new("TextLabel")
+local Divider = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+
+--Properties:
+   	local Effect = Instance.new("Sound")
+	Effect.Name = "Effect"
+	Effect.SoundId = "rbxassetid://7610391610"
+	Effect.Volume = 0.5
+	Effect.Pitch =  1
+	Effect.Parent = game
+	Effect:play()
+IntroGui.Name = "IntroGui"
+IntroGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Simulation.Name = "Simulation"
+Simulation.Parent = IntroGui
+Simulation.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Simulation.BackgroundTransparency = 1.000
+Simulation.BorderSizePixel = 0
+Simulation.Position = UDim2.new(0.25, 0, 0.25, 0)
+Simulation.Size = UDim2.new(0.5, 0, 0.186233595, 0)
+Simulation.ZIndex = 4
+Simulation.Font = Enum.Font.GothamSemibold
+Simulation.Text = "Vall-Reanim Loading.."
+Simulation.TextColor3 = Color3.fromRGB(255, 255, 255)
+Simulation.TextScaled = true
+Simulation.TextSize = 14.000
+Simulation.TextStrokeTransparency = 0.000
+Simulation.TextWrapped = true
+
+Block.Name = "Block"
+Block.Parent = IntroGui
+Block.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Block.BorderSizePixel = 0
+Block.Position = UDim2.new(-0.25, 0, -0.5, 0)
+Block.Size = UDim2.new(2, 0, 2, 0)
+Block.ZIndex = 3
+
+Games.Name = "Games"
+Games.Parent = IntroGui
+Games.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Games.BackgroundTransparency = 1.000
+Games.BorderSizePixel = 0
+Games.Position = UDim2.new(0.25, 0, 0.449999988, 0)
+Games.Size = UDim2.new(0.5, 0, 0.12971428, 0)
+Games.ZIndex = 4
+Games.Font = Enum.Font.Code
+Games.Text = "https://discord.gg/syntax-ultimate"
+Games.TextColor3 = Color3.fromRGB(255, 255, 255)
+Games.TextSize = 37.000
+Games.TextStrokeTransparency = 0.000
+Games.TextWrapped = true
+
+Divider.Name = "Divider"
+Divider.Parent = IntroGui
+Divider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Divider.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Divider.BorderSizePixel = 2
+Divider.Position = UDim2.new(0.25, 0, 0.449999988, 0)
+Divider.Size = UDim2.new(0.5, 0, 0.00999999978, 0)
+Divider.ZIndex = 4
+
+   	local Effect = Instance.new("Sound")
+	Effect.Name = "Effect"
+	Effect.SoundId = "rbxassetid://1091083826"
+	Effect.Volume = 0.5
+	Effect.Pitch =  1
+	Effect.Parent = game
+	Effect:play()
+
+UICorner.Parent = Divider
+
+-- Scripts:
+
+local function RLXBJB_fake_script() -- IntroGui.Tween 
+	local script = Instance.new('LocalScript', IntroGui)
+
+	local gui = script.Parent.Parent:WaitForChild("IntroGui")
+	local simulation = script.Parent:WaitForChild("Simulation")
+	local games = script.Parent:WaitForChild("Games")
+	local block = script.Parent:WaitForChild("Block")
+	local divider = script.Parent:WaitForChild("Divider")
+	gui.Enabled = true
+	simulation.Visible = false
+	games.Visible = false
+	divider.Visible = true
+	block.Visible = true
+	wait(.5)
+	
+	coroutine.resume(coroutine.create(function()
+		
+		simulation.Position = simulation.Position + UDim2.new(-1,0,0,0)
+		simulation.Visible = true
+		simulation:TweenPosition(simulation.Position + UDim2.new(1,0,0,0))
+		
+	end))
+	wait(.5)
+	coroutine.resume(coroutine.create(function()
+		
+		games.Position = games.Position + UDim2.new(1,0,0,0)
+		games.Visible = true
+		games:TweenPosition(games.Position + UDim2.new(-1,0,0,0))
+		
+	end))
+	wait(2)
+	simulation:TweenPosition(simulation.Position + UDim2.new(0,0,-1,0))
+	games:TweenPosition(games.Position + UDim2.new(0,0,1,0))
+	divider:TweenSize(UDim2.new(0,0,0,0))
+	wait(1)
+	divider.Visible = false
+	wait(1)
+	for i=1,100 do
+		wait()
+		block.BackgroundTransparency = block.BackgroundTransparency +.01
+	end
+	block.Visible = false
+	gui.Enabled = false
+end
+coroutine.wrap(RLXBJB_fake_script)()
+local function SQBY_fake_script() -- IntroGui.MOVE ME TO SERVERSCRIPTSERVICE 
+	local script = Instance.new('Script', IntroGui)
+
+	game.Players.PlayerAdded:connect(function(player)
+		local clone = game.ServerStorage.IntroGui:Clone()
+		clone.Parent = player.PlayerGui
+		
+	end)
+end
+coroutine.wrap(SQBY_fake_script)()
+
+-- Gui to Lua
+-- Version: 3.2
+wait(7)
+IntroGui:Destroy()
+
+
+
+sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
+sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",1.0000000331814e+32)
+
+local pornhubbbbbbbbbbb = false
+local velocityyyyyyyy = Vector3.new(0, -25.05, 0)
+
+local lp = game:GetService("Players").LocalPlayer
+local rs = game:GetService("RunService")
+local sg = game:GetService("StarterGui")
+
+local c = lp.Character
+
+local function gp(parent, name, className)
+	local ret = nil
+	if parent then
+		for i, v in pairs(parent:GetChildren()) do
+			if (v.Name == name) and v:IsA(className) then
+				ret = v
+			end
+		end
+	end
+	return ret
+end
+
+local function align(Part0, Part1, velocityyyyyyyy)
+	Part0.CustomPhysicalProperties = PhysicalProperties.new(0.0001, 0.0001, 0.0001, 0.0001, 0.0001)
+
+	local att1 = Instance.new("Attachment")
+	att1.Orientation = Vector3.new(0, 0, 0)
+	att1.Position = Vector3.new(0, 0, 0)
+	att1.Archivable = true
+	local att0 = att1:Clone()
+
+	local ap = Instance.new("AlignPosition", att0)
+	ap.ApplyAtCenterOfMass = true
+	ap.MaxForce = 9e9
+	ap.MaxVelocity = 9e9
+	ap.ReactionForceEnabled = false
+	ap.Responsiveness = 200
+	ap.RigidityEnabled = pornhubbbbbbbbbbb
+
+	local ao = Instance.new("AlignOrientation", att0)
+	ao.MaxAngularVelocity = 9e9
+	ao.MaxTorque = 9e9
+	ao.PrimaryAxisOnly = false
+	ao.ReactionTorqueEnabled = false
+	ao.Responsiveness = 200
+	ao.RigidityEnabled = false
+
+	ap.Attachment1 = att1
+	ap.Attachment0 = att0
+	ao.Attachment1 = att1
+	ao.Attachment0 = att0
+
+	att1.Parent = Part1
+	att0.Parent = Part0
+	
+	spawn(function()
+		if not velocityyyyyyyy then
+			return
+		end
+		while rs.Heartbeat:Wait() and Part0 and Part0.Parent do
+			Part0.Velocity = velocityyyyyyyy
+		end
+	end)
+end
+
+if c and c.Parent then
+	local fc = Instance.new("Model")
+	local nh = Instance.new("Humanoid", fc)
+	lp.Character = fc
+	nh.Health = 0
+	lp.Character = c
+	fc:Destroy()
+
+	wait(5.5)
+
+	if c and c.Parent then
+	
+        pcall(function()
+            settings().Physics.AllowSleep = false
+            settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
+        end)
+
+        local OLDscripts = {}
+
+		for i, v in pairs(c:GetDescendants()) do
+			if v.ClassName == "Script" then
+				table.insert(OLDscripts, v)
+			end
+		end
+
+        local scriptNames = {}
+
+		for i, v in pairs(c:GetDescendants()) do
+			if v and v.Parent and v:IsA("BasePart") then
+			    local newName = tostring(i)
+			    local exists = true
+			    while exists do
+    			    exists = false
+    			    for i, v in pairs(OLDscripts) do
+    			        if v.Name == newName then
+    			            exists = true
+    			        end
+    			    end
+    			    if exists then
+    			        newName = newName .. "_"    
+    			    end
+			    end
+                table.insert(scriptNames, newName)
+				Instance.new("Script", v).Name = newName
+			end
+		end
+
+		c.Archivable = true
+		local cl = c:Clone()
+        for i, v in pairs(cl:GetDescendants()) do
+            pcall(function()
+                v.Transparency = 1
+                v.Anchored = false
+            end)
+        end
+
+		local model = Instance.new("Model", c)
+		model.Name = model.ClassName
+
+		for i, v in pairs(c:GetChildren()) do
+			if v and v.Parent and (v ~= model) then
+				v.Parent = model
+			end
+		end
+        model:BreakJoints()
+
+		cl.Parent = c
+		for i, v in pairs(cl:GetChildren()) do
+			if v and v.Parent then
+				v.Parent = c
+			end
+		end
+		cl:Destroy()
+
+		spawn(function()
+			while model and model.Parent do
+				for i, v in pairs(model:GetDescendants()) do
+					if v and v.Parent and v:IsA("BasePart") then
+						v.CanCollide = false
+					end
+				end
+				rs.Stepped:Wait()
+			end
+		end)
+
+		wait()
+
+		for i, scr in pairs(model:GetDescendants()) do
+			if scr and scr.Parent and (scr.ClassName == "Script") and table.find(scriptNames, scr.Name) then
+				local Part0 = scr.Parent
+				if Part0:IsA("BasePart") then
+					for i1, scr1 in pairs(c:GetDescendants()) do
+						if scr1 and scr1.Parent and (scr1.ClassName == "Script") and (scr1.Name == scr.Name) and (not scr1:IsDescendantOf(model)) then
+							local Part1 = scr1.Parent
+							if Part1.ClassName == Part0.ClassName then
+								align(Part0, Part1, velocityyyyyyyy)
+							end
+						end
+					end
+				end
+			end
+		end
+
+		for i, v in pairs(c:GetDescendants()) do
+			if v and v.Parent then
+				if v.ClassName == "Script" then
+					if table.find(scriptNames, v.Name) then
+						v:Destroy()
+					end
+				else
+				    if not v:IsDescendantOf(model) then
+    					if v:IsA("Decal") then
+    					    v.Transparency = 1
+    					end
+    					if v:IsA("ForceField") then
+    					    v.Visible = false
+    					end
+    					if v:IsA("Sound") then
+    					    v.Playing = false
+    					end
+    					if v:IsA("BillboardGui") or v:IsA("SurfaceGui") or v:IsA("ParticleEmitter") or v:IsA("Fire") or v:IsA("Smoke") or v:IsA("Sparkles") then
+    						v.Enabled = false
+    					end
+					end
+				end
+			end
+		end
+
+		local hum0 = model:FindFirstChildOfClass("Humanoid")
+		local hum1 = c:FindFirstChildOfClass("Humanoid")
+		if hum0 and hum1 then
+			game:GetService("Workspace").CurrentCamera.CameraSubject = hum1
+			hum0.Changed:Connect(function(prop)
+				if (prop == "Jump") and hum1 and hum1.Parent then
+					hum1.Jump = hum0.Jump
+				end
+			end)
+		end
+
+		local rb = Instance.new("BindableEvent", c)
+		rb.Event:Connect(function()
+			rb:Destroy()
+			sg:SetCore("ResetButtonCallback", true)
+			lp.Character = model
+			wait()
+			lp.Character = c
+		end)
+		sg:SetCore("ResetButtonCallback", rb)
+
+		spawn(function()
+			while c and c.Parent do
+				if hum0 and hum0.Parent and hum1 and hum1.Parent then
+                    hum1.Jump = hum0.Jump
+                end
+				wait()
+			end
+			sg:SetCore("ResetButtonCallback", true)
+		end)
+	end
+end
+
+
+
+local power = 1000000000000000000000000
+local partName = "HumanoidRootPart"
+
+local function gp(parent, name, className)
+	local ret = nil
+	if parent then
+		for i, v in pairs(parent:GetChildren()) do
+			if (v.Name == name) and v:IsA(className) then
+				ret = v
+			end
+		end
+	end
+	return ret
+end
+
+local lp = game:GetService("Players").LocalPlayer
+local m = {
+    m = lp:GetMouse(),
+    p = false
+}
+m.m.Button1Down:Connect(function()
+    m.p = true
+end)
+m.m.Button1Up:Connect(function()
+    m.p = false
+end)
+local c = lp.Character
+if not (c and c.Parent) then
+	print("character not found")
+	return
+end
+local hrp = gp(gp(c, "Model", "Model"), partName, "BasePart")
+if not hrp then
+	print("part not found")
+	return
+end
+local a = {}
+for i, v in pairs(hrp:GetDescendants()) do
+	if v:IsA("AlignPosition") then
+		a.p = v
+	end
+	if v:IsA("AlignOrientation") then
+		a.o = v
+	end
+end
+if not (a.p and a.o) then
+	print("align not found")
+	return
+end
+for i, v in pairs(hrp:GetDescendants()) do
+	if not (a.p:IsDescendantOf(v) or a.o:IsDescendantOf(v)) then
+		if (v ~= a.p) and (v ~= a.o) then
+			v:Destroy()
+		end
+	end
+end
+if hrp.Transparency > 0.8 then
+	hrp.Transparency = 0.8
+ 	local outline = Instance.new("SelectionBox")
+					outline.Name = "Outline"
+					outline.Color3 = Color3.new(0,255,0)
+					outline.SurfaceColor3 = Color3.new(0, 1, 0)
+					--outline.SurfaceTransparency = 0.9
+					outline.LineThickness = 0.01
+					outline.Transparency = 0.3
+					outline.Adornee = hrp
+					outline.Parent = hrp
+		        hrp.Size = Vector3.new(1,1,1)
+end
+local bp = Instance.new("BodyPosition", hrp)
+bp.P = 30000
+bp.D = 50
+game:GetService("RunService").RenderStepped:Connect(function()
+    if hrp and hrp.Parent and bp and bp.Parent then
+        if m.p and m.m.Target then
+            a.p.Enabled = false
+            a.o.Enabled = false
+            bp.Position = m.m.Hit.Position
+            hrp.RotVelocity = Vector3.new(power, power, power)
+			bp.Parent = hrp
+        else
+            a.p.Enabled = true
+            a.o.Enabled = true
+			if bp.Parent == hrp then
+				hrp.RotVelocity = Vector3.new(0, 0, 0)
+			end
+            bp.Parent = a.p
+        end
+    end
+end)
